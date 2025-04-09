@@ -1,0 +1,14 @@
+services:
+  backend:
+    image: docker.ub.gu.se/alertmessage:${GIT_REVISION}
+    restart: always
+    environment:
+      - RAILS_ENVIRONMENT=${ENVIRONMENT}
+      - RAILS_MASTER_KEY=${RAILS_MASTER_KEY}
+      - TIMEOUT_INTERVAL=${TIMEOUT_INTERVAL}
+      - KOHA_SYSTEM_PREFERENCE_MAPPING=${KOHA_SYSTEM_PREFERENCE_MAPPING}
+      - KOHA_URL=${KOHA_URL}
+      - KOHA_LOGIN_USERID=${KOHA_LOGIN_USERID}
+      - KOHA_LOGIN_PASSWORD=${KOHA_LOGIN_PASSWORD}
+    ports:
+      - ${EXPOSED_PORT}:3000
