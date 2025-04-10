@@ -16,7 +16,7 @@ class Koha
     # and improve performance
     # You can adjust the timeout_interval as needed
     timeout_interval = ENV["TIMEOUT_INTERVAL"]
-    Rails.cache.fetch(name, expires_in: timeout_interval.to_i.minutes) do
+    Rails.cache.fetch(pref, expires_in: timeout_interval.to_i.minutes) do
       url = ENV["KOHA_URL"]
       login_userid = ENV["KOHA_LOGIN_USERID"]
       login_password = ENV["KOHA_LOGIN_PASSWORD"]
